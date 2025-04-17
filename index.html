@@ -1,0 +1,79 @@
+<!-- Save as index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>I'm Sorry, Love 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Pacifico', cursive;
+      background: linear-gradient(to bottom right, #ffb6c1, #ffe4e1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      overflow: hidden;
+    }
+    h1 {
+      font-size: 3rem;
+      color: #d6336c;
+    }
+    p {
+      font-size: 1.5rem;
+      color: #333;
+      max-width: 90%;
+    }
+    .heart {
+      width: 50px;
+      height: 50px;
+      background: red;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      animation: float 5s infinite ease-in;
+    }
+    .heart::before, .heart::after {
+      content: '';
+      width: 50px;
+      height: 50px;
+      background: red;
+      position: absolute;
+      border-radius: 50%;
+    }
+    .heart::before {
+      top: -25px;
+      left: 0;
+    }
+    .heart::after {
+      left: -25px;
+      top: 0;
+    }
+    @keyframes float {
+      0% { top: 100%; opacity: 1; }
+      100% { top: -10%; opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <h1>I'm Sorry 😢</h1>
+  <p>I know I messed up, and I feel really bad about it.<br> You mean the world to me. 💗<br>Please forgive me, my love.</p>
+
+  <!-- Add multiple hearts with JS -->
+  <script>
+    for (let i = 0; i < 20; i++) {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + '%';
+      heart.style.animationDelay = Math.random() * 5 + 's';
+      heart.style.background = ['#ff6b81', '#ff4757', '#ff7f50'][Math.floor(Math.random()*3)];
+      document.body.appendChild(heart);
+    }
+  </script>
+</body>
+</html>
