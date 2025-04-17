@@ -58,11 +58,32 @@
       0% { top: 100%; opacity: 1; }
       100% { top: -10%; opacity: 0; }
     }
+    .button {
+      margin-top: 30px;
+      padding: 10px 20px;
+      font-size: 1.5rem;
+      background-color: #d6336c;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .button:hover {
+      background-color: #ff6b81;
+    }
+    .button:disabled {
+      background-color: #ddd;
+      cursor: not-allowed;
+    }
   </style>
 </head>
 <body>
   <h1>I'm Sorry 😢</h1>
   <p>I know I messed up, and I feel really bad about it.<br> You mean the world to me. 💗<br>Please forgive me, my love.</p>
+
+  <!-- Add a button for forgiveness -->
+  <button class="button" id="forgiveButton">Will you forgive me? 💖</button>
 
   <!-- Add multiple hearts with JS -->
   <script>
@@ -71,9 +92,23 @@
       heart.className = 'heart';
       heart.style.left = Math.random() * 100 + '%';
       heart.style.animationDelay = Math.random() * 5 + 's';
-      heart.style.background = ['#ff6b81', '#ff4757', '#ff7f50'][Math.floor(Math.random()*3)];
+      heart.style.background = ['#ff6b81', '#ff4757', '#ff7f50'][Math.floor(Math.random() * 3)];
       document.body.appendChild(heart);
     }
+
+    // Handle forgiveness button
+    const forgiveButton = document.getElementById('forgiveButton');
+
+    forgiveButton.addEventListener('click', function() {
+      // Redirect to a new page if Yes is clicked
+      window.location.href = "forgive.html"; // Page where "You're amazing" message is shown
+    });
+
+    // Optional: Handle No click (disabling the button)
+    forgiveButton.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+      forgiveButton.disabled = true;
+    });
   </script>
 </body>
 </html>
