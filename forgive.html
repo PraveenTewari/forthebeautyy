@@ -44,12 +44,26 @@
       background-color: #ddd;
       cursor: not-allowed;
     }
+    .main-img {
+  width: 250px;
+  max-width: 80%;
+  border-radius: 20px;
+  margin: 20px 0;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease-in-out;
+}
+.main-img:hover {
+  transform: scale(1.05);
+}
+
   </style>
 </head>
 <body>
   <h1>You’re Amazing 💖</h1>
   <p>Thank you for forgiving me! You are truly the best. 😘</p>
   <button class="button" id="backToStart">Back to start</button>
+  <img src="first.png" alt="Us Together" class="main-img">
+
   <script>
       const backToStart = document.getElementById('backToStart');
 
