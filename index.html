@@ -82,10 +82,8 @@
   <h1>I'm Sorry 😢</h1>
   <p>I know I messed up, and I feel really bad about it.<br> You mean the world to me. 💗<br>Please forgive me, my love.</p>
 
-  <!-- Add a button for forgiveness -->
-  <button class="button" id="forgiveButton">Will you forgive me? 💖</button>
+  <button class="button" id="forgiveButton">Will you prefer reading more?</button>
 
-  <!-- Add multiple hearts with JS -->
   <script>
     for (let i = 0; i < 20; i++) {
       const heart = document.createElement('div');
@@ -96,15 +94,12 @@
       document.body.appendChild(heart);
     }
 
-    // Handle forgiveness button
     const forgiveButton = document.getElementById('forgiveButton');
 
     forgiveButton.addEventListener('click', function() {
-      // Redirect to a new page if Yes is clicked
-      window.location.href = "forgive.html"; // Page where "You're amazing" message is shown
+      window.location.href = "forgive.html"; 
     });
 
-    // Optional: Handle No click (disabling the button)
     forgiveButton.addEventListener('contextmenu', function(e) {
       e.preventDefault();
       forgiveButton.disabled = true;

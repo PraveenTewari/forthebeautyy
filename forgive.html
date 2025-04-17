@@ -31,5 +31,19 @@
 <body>
   <h1>You’re Amazing 💖</h1>
   <p>Thank you for forgiving me! You are truly the best. 😘</p>
+  <button class="button" id="backToStart">Back to start</button>
+  <script>
+      const backToStart = document.getElementById('backToStart');
+
+      backToStart.addEventListener('click', function() {
+  window.location.href = "index.html"; 
+});
+
+backToStart.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
+  backToStart.disabled = true;
+});
+  </script>
 </body>
+
 </html>
