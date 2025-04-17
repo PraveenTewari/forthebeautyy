@@ -1,0 +1,114 @@
+<!-- Save as index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Why so amazing 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Pacifico', cursive;
+      background: linear-gradient(to bottom right, #ffb6c1, #ffe4e1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      overflow: hidden;
+    }
+    h1 {
+      font-size: 3rem;
+      color: #d6336c;
+    }
+    p {
+      font-size: 1.5rem;
+      color: #333;
+      max-width: 90%;
+    }
+    .heart {
+      width: 50px;
+      height: 50px;
+      background: red;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      animation: float 5s infinite ease-in;
+    }
+    .heart::before, .heart::after {
+      content: '';
+      width: 50px;
+      height: 50px;
+      background: red;
+      position: absolute;
+      border-radius: 50%;
+    }
+    .heart::before {
+      top: -25px;
+      left: 0;
+    }
+    .heart::after {
+      left: -25px;
+      top: 0;
+    }
+    @keyframes float {
+      0% { top: 100%; opacity: 1; }
+      100% { top: -10%; opacity: 0; }
+    }
+    .button {
+      margin-top: 30px;
+      padding: 10px 20px;
+      font-size: 1.5rem;
+      background-color: #d6336c;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .button:hover {
+      background-color: #ff6b81;
+    }
+    .button:disabled {
+      background-color: #ddd;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <h1>You're amazinggg</h1>
+  <p>:) :) :)<br></p>
+
+  <!-- Add a button for forgiveness -->
+  <button class="button" id="forgiveButton">BackToStarttttttt</button>
+
+  <!-- Add multiple hearts with JS -->
+  <script>
+    for (let i = 0; i < 20; i++) {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + '%';
+      heart.style.animationDelay = Math.random() * 5 + 's';
+      heart.style.background = ['#ff6b81', '#ff4757', '#ff7f50'][Math.floor(Math.random() * 3)];
+      document.body.appendChild(heart);
+    }
+
+    // Handle forgiveness button
+    const forgiveButton = document.getElementById('forgiveButton');
+
+    forgiveButton.addEventListener('click', function() {
+      // Redirect to a new page if Yes is clicked
+      window.location.href = "index.html"; // Page where "You're amazing" message is shown
+    });
+
+    // Optional: Handle No click (disabling the button)
+    forgiveButton.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+      forgiveButton.disabled = true;
+    });
+  </script>
+</body>
+</html>
